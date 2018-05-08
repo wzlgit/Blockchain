@@ -1,6 +1,7 @@
 ## Hyperledger Fabric运行体验（MacOS系统）
 # 0、运行前提
-==这里假设你已经安装了Homebrew、Go、Docker容器（并且已经下载了对应的images镜像）等环境（具体可以查看我另外一篇待发表的《Hyperleger Fabric环境搭建》参考）
+==这里假设你已经安装了Homebrew、Go、Docker容器（并且已经下载了对应的images镜像）等环境（具体可以查看我另外一篇待发表的《Hyperledger Fabric开发环境搭建（MacOS系统）》参考）
+
 （1）Homebrew安装命令:
 
 ```
@@ -11,6 +12,7 @@
 ```
 brew install go
 ```
+
 （3）Docker界面化软件操作和管理，下载地址（点击页面的“Get Docker”按钮即可下载）:
 
 ```
