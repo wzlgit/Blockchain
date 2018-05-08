@@ -28,7 +28,8 @@ docker-compose --version
 
 
 运行Hyperledger Fabric需要设置比较多的初始化设置，官方的Demo工程已经生成了对应的配置文件，以下体验部署和调用过程：
-#1、下载fabric-samples源码
+
+# 1、下载fabric-samples源码
 
 ```
 git clone https://github.com/hyperledger/fabric-samples
@@ -44,7 +45,7 @@ Receiving objects: 100% (1518/1518), 564.97 KiB | 32.00 KiB/s, done.
 Resolving deltas: 100% (703/703), done.
 ```
 
-# 2、启动Docker容器：
+#2、启动Docker容器：
 （1）用cd命令进入到"fabric-samples/basic-network"目录，利用docker-compose启动Docker容器
 
 ```
