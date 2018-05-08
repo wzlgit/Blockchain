@@ -2,15 +2,15 @@
 
 
 
-## Hyperledger Fabric开发环境搭建（MacOS系统）
-#1、安装Homebrew：
+### Hyperledger Fabric开发环境搭建（MacOS系统）
+#### 1、安装Homebrew：
 
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-#2、安装Go：
+#### 2、安装Go：
 
 （1）安装命令：
 
@@ -72,7 +72,7 @@ CGO_LDFLAGS="-g -O2"
 PKG_CONFIG="pkg-config"
 ```
 
-#3、安装Docker：
+#### 3、安装Docker：
 Docker界面化软件方便操作和管理，下载地址如下
 （点击页面的“Get Docker”按钮即可下载）
 
@@ -90,7 +90,7 @@ wenziliangdeiMac:~ wenzil$ docker-compose --version
 docker-compose version 1.21.1, build 5a3f1a3
 ```
 
-#4、安装nvm
+#### 4、安装nvm
 
 ```
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.7/install.sh | bash
@@ -131,7 +131,7 @@ export NVM_DIR="$HOME/.nvm"
 source .bash_profile
 ```
 
-#4、安装node指定版本
+#### 5、安装node指定版本
 
 ```
 Node.js version 7.x is not supported at this time.
@@ -144,13 +144,13 @@ Node.js - version 6.9.x or greater
 http://hyperledger-fabric.readthedocs.io/en/v1.1.0-alpha/prereqs.html#node-js-runtime-and-npm
 ```
 
-#5、下载Hyperledger的一个Demo源码
+#### 6、下载Hyperledger的一个Demo源码
 
 ```
 git clone https://github.com/hyperledger/fabric-samples
 ```
 
-#6、下载特定平台的二进制文件（注意这里有坑，也可以跳过此步骤，先操作第7和第8步，再回来看下）
+#### 7、下载特定平台的二进制文件（注意这里有坑，也可以跳过此步骤，先操作第7和第8步，再回来看下）
 ==**坑说明：有人直接让你下载某个平台某个版本的二进制文件，然后发现运行不了，无法进行下一步操作。**==
 
 先打开Fabric的官网，会自动跳转到对应的版本：
@@ -186,7 +186,7 @@ MacOS对应的文件夹，如图，点击下载压缩包文件：
 下载成功后解压出来，是一个bin文件夹，然后复制该文件夹到fabric-samples根目录下，如图：
 ![fabric_sample6](media/15255292965588/fabric_sample6.png)
 
-#7、设置Docker容器代理
+#### 8、设置Docker容器代理
 设置Docker代理可提高镜像下载速度，否则很慢（慢到可能需要下载大半天甚至一天以上）。
 点击"Docker"的"Preferences..."菜单，切换到"Daemon"菜单，在"Registry mirrors"中添加代理，地址如下：
 
@@ -202,7 +202,7 @@ https://www.docker-cn.com/registry-mirror
 添加成功后，"Apply & Restart"按钮会变成可点击状态，点击进行配置自动重启Docker。
 ![fabric_sample7](media/15255292965588/fabric_sample7.png)
 
-#8、安装Docker镜像前准备
+#### 9、安装Docker镜像前准备
 先打开如下网址（这个可能需要翻墙）：
 
 ```
@@ -216,7 +216,7 @@ https://goo.gl/byy2Qj
 # echo "===> Downloading platform binaries"
 # curl https://nexus.hyperledger.org/content/repositories/releases/org/hyperledger/fabric/hyperledger-fabric/${ARCH}-${VERSION}/hyperledger-fabric-${ARCH}-${VERSION}.tar.gz | tar xz
 ```
-==**跳转第6步的注意看下：当时是按照6、7、8步骤操作的，现在想想应该可以不用注释上面这两行代码，然后省略第6步手动下载二进制文件，从让系统自动下载特定平台的二进制文件并自动解压，有机会可以试下，成功后应该会在fabric-samples根目录下生成bin文件夹。**==
+==**跳过了第7步的注意看下：当时是按照7、8、9步骤操作的，现在想想应该可以不用注释上面这两行代码，然后省略第7步手动下载二进制文件，从让系统自动下载特定平台的二进制文件并自动解压，有机会可以试下，成功后应该会在fabric-samples根目录下生成bin文件夹。**==
 
 设置"init.sh"文件最高权限777，执行"./init.sh"命令之前确保已经启动Docker。
 
@@ -226,11 +226,11 @@ chmod 777 init.sh
 ./init.sh
 ```
 
-#9、安装Docker镜像
+#### 10、安装Docker镜像
 执行了"./init.sh"命令之后，会下载很多镜像文件，目测十几G的样子，成功后如图：
 ![fabric_sample9](media/15255292965588/fabric_sample9.png)
 
-#10、创建第一个区块链网络
+#### 11、创建第一个区块链网络
 （1）注意观察，在"first-network"目录下的"channel-artifacts"文件夹是空的。
 ![fabric_sample10](media/15255292965588/fabric_sample10.png)
 （2）创建第一个区块链网络前，先关闭所有服务，执行命令:
