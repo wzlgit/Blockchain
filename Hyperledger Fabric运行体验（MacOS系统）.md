@@ -2,18 +2,21 @@
 # 0、运行前提
 ==这里假设你已经安装了Homebrew、Go、Docker容器（并且已经下载了对应的images镜像）等环境（具体可以查看我另外一篇待发表的《Hyperledger Fabric开发环境搭建（MacOS系统）》参考）
 
-（1）Homebrew安装命令:
+（1）安装Homebrew:
 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-（2）Go安装命令:
+（2）安装Go:
 
 ```
 brew install go
 ```
 
-（3）Docker界面化软件操作和管理，下载地址（点击页面的“Get Docker”按钮即可下载）:
+（3）安装Docker:
+
+Docker界面化软件方便操作和管理，下载地址如下
+（点击页面的“Get Docker”按钮即可下载）
 
 ```
 # 下载地址
