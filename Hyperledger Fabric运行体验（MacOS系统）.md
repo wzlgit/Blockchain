@@ -1,6 +1,7 @@
 ## Hyperledger Fabric运行体验（MacOS系统）
 # 0、运行前提
-==这里假设你已经安装了Homebrew、Go、Docker容器（并且已经下载了对应的images镜像）等环境（具体可以查看我另外一篇待发表的《Hyperledger Fabric开发环境搭建（MacOS系统）》参考）==
+**==这里假设你已经安装了Homebrew、Go、Docker容器（并且已经下载了对应的images镜像）等环境
+（具体可以查看我另外一篇《Hyperledger Fabric开发环境搭建（MacOS系统）》作为参考）==**
 
 （1）安装Homebrew:
 
@@ -199,7 +200,7 @@ root@58881c674fbb:/opt/gopath/src/github.com/hyperledger/fabric/peer# peer chain
 peer chaincode instantiate -o orderer.example.com:7050 -C mychannel -n mycc -v v0 -c '{"Args":["init","a","100","b","200"]}'
 ```
 **a的初始值为100，b的初始值为200.**
-**==出现了好几次TLS握手超时（"TLS handshake timeout"）问题，重新试过几次就好了==**
+**==出现了好几次TLS握手超时（"TLS handshake timeout"）问题，重新试多几次就好了==**
 **==很多网络服务在国内被封了，特别是Google生态相关的服务，建议使用VPN（VPN也基本被封了，很难找到可以使用的，求推荐）==**
 
 ```
