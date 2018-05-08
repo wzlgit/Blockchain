@@ -27,7 +27,7 @@ docker-compose --version
 ```
 
 
-运行Hyperledger Fabric需要设置比较多的初始化设置，官方的Demo工程已经生成了对应的配置文件，以下体验部署和调用过程：
+运行Hyperledger Fabric需要设置比较多的初始化设置，官方的Demo工程已经生成了对应的配置文件，以下体验部署和调用过程
 
 # 1、下载fabric-samples源码
 
@@ -45,7 +45,7 @@ Receiving objects: 100% (1518/1518), 564.97 KiB | 32.00 KiB/s, done.
 Resolving deltas: 100% (703/703), done.
 ```
 
-#2、启动Docker容器：
+# 2、启动Docker容器：
 （1）用cd命令进入到"fabric-samples/basic-network"目录，利用docker-compose启动Docker容器
 
 ```
@@ -77,7 +77,7 @@ dbb264c6dd75        hyperledger/fabric-couchdb   "tini -- /docker-ent…"   11 s
 062ca990755f        hyperledger/fabric-orderer   "orderer"                11 seconds ago      Up 11 seconds       0.0.0.0:7050->7050/tcp                           orderer.example.com
 ```
 
-#3、切换到管理员用户，创建和加入通道：
+# #3、切换到管理员用户，创建和加入通道：
 
 （1）切换环境到管理员用户的MSP，进入Peer节点容器peer0.org1.example.com
 
