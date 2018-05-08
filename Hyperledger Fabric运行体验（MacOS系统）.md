@@ -1,6 +1,6 @@
 ## Hyperledger Fabric运行体验（MacOS系统）
 # 0、运行前提
-==这里假设你已经安装了Homebrew、Go、Docker容器（并且已经下载了对应的images镜像）等环境（具体可以查看我另外一篇待发表的”Hyperleger Fabric环境搭建“参考）
+==这里假设你已经安装了Homebrew、Go、Docker容器（并且已经下载了对应的images镜像）等环境（具体可以查看我另外一篇待发表的《Hyperleger Fabric环境搭建》参考）
 （1）Homebrew安装命令:
 
 ```
