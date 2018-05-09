@@ -150,7 +150,7 @@ http://hyperledger-fabric.readthedocs.io/en/v1.1.0-alpha/prereqs.html#node-js-ru
 git clone https://github.com/hyperledger/fabric-samples
 ```
 
-#### 7、下载特定平台的二进制文件（注意这里有坑，也可以跳过此步骤，先操作第7和第8步，再回来看下）
+#### 7、下载特定平台的二进制文件（注意这里有坑，也可以跳过此步骤，先操作第8和第9步，再回来看下）
 ==**坑说明：有人直接让你下载某个平台某个版本的二进制文件，然后发现运行不了，无法进行下一步操作。**==
 
 先打开Fabric的官网，会自动跳转到对应的版本：
