@@ -1,6 +1,6 @@
 ### Hyperledger Fabric运行体验（MacOS系统）
-#### 0、运行前提
-**==这里假设你已经安装了Homebrew、Go、Docker容器（并且已经下载了对应的images镜像）等环境
+#### 1、运行前提
+ **==这里假设你已经安装了Homebrew、Go、Docker容器（并且已经下载了对应的images镜像）等环境
 （具体可以查看我另外一篇《Hyperledger Fabric开发环境搭建（MacOS系统）》作为参考）==**
 
 （1）安装Homebrew:
@@ -13,9 +13,7 @@
 ```
 brew install go
 ```
-
 （3）安装Docker:
-
 Docker界面化软件方便操作和管理，下载地址如下
 （点击页面的“Get Docker”按钮即可下载）
 
@@ -30,7 +28,7 @@ docker-compose --version
 
 运行Hyperledger Fabric需要设置比较多的初始化设置，官方的Demo工程已经生成了对应的配置文件，以下体验部署和调用过程
 
-#### 1、下载fabric-samples源码
+#### 2、下载fabric-samples源码
 
 ```
 git clone https://github.com/hyperledger/fabric-samples
@@ -46,7 +44,7 @@ Receiving objects: 100% (1518/1518), 564.97 KiB | 32.00 KiB/s, done.
 Resolving deltas: 100% (703/703), done.
 ```
 
-#### 2、启动Docker容器：
+#### 3、启动Docker容器
 （1）用cd命令进入到"fabric-samples/basic-network"目录，利用docker-compose启动Docker容器
 
 ```
@@ -78,7 +76,20 @@ dbb264c6dd75        hyperledger/fabric-couchdb   "tini -- /docker-ent…"   11 s
 062ca990755f        hyperledger/fabric-orderer   "orderer"                11 seconds ago      Up 11 seconds       0.0.0.0:7050->7050/tcp                           orderer.example.com
 ```
 
-#### 3、切换到管理员用户，创建和加入通道：
+#### 4、Docker相关命令
+
+```
+#删除所有活跃的容器（失败重试会用到）
+docker rm -f $(docker ps -aq)
+#清理网络缓存（失败重试会用到）
+docker network prune
+#杀死所有正在运行的容器
+docker kill $(docker ps -a -q)
+#删除所有镜像（慎用，得重新下载镜像）
+docker rmi $(docker images -q)
+```
+
+#### 5、切换到管理员用户，创建和加入通道
 
 （1）切换环境到管理员用户的MSP，进入Peer节点容器peer0.org1.example.com
 
@@ -160,7 +171,7 @@ root@6f2f13a6906b:/opt/gopath/src/github.com/hyperledger/fabric# exit
 exit
 ```
 
-#### 4、进入cli容器
+#### 6、进入cli容器
 
 ```
 docker exec -it cli /bin/bash
@@ -169,7 +180,7 @@ docker exec -it cli /bin/bash
 ```
 carisokdeiMac:basic-network carisok$ docker exec -it cli /bin/bash
 ```
-#### 5、安装链码
+#### 7、安装链码
 给Peer节点容器安装链码
 
 ```
@@ -194,13 +205,13 @@ root@58881c674fbb:/opt/gopath/src/github.com/hyperledger/fabric/peer# peer chain
 2018-05-08 05:42:41.218 UTC [main] main -> INFO 00e Exiting.....
 ```
 
-#### 6、实例化链码
+#### 8、实例化链码
 
 ```
 peer chaincode instantiate -o orderer.example.com:7050 -C mychannel -n mycc -v v0 -c '{"Args":["init","a","100","b","200"]}'
 ```
 **a的初始值为100，b的初始值为200.**
-**==出现了好几次TLS握手超时（"TLS handshake timeout"）问题，重新试多几次就好了==**
+**==出现了好几次TLS握手超时（"TLS handshake timeout"）问题，重新试过几次就好了==**
 **==很多网络服务在国内被封了，特别是Google生态相关的服务，建议使用VPN（VPN也基本被封了，很难找到可以使用的，求推荐）==**
 
 ```
@@ -246,7 +257,7 @@ root@58881c674fbb:/opt/gopath/src/github.com/hyperledger/fabric/peer# peer chain
 2018-05-08 05:49:10.926 UTC [main] main -> INFO 009 Exiting.....
 ```
 
-#### 7、链码调用和查询
+#### 9、链码调用和查询
 （1）链码实例化后，可以查询初始值
 
 ```
@@ -305,7 +316,7 @@ Query Result: 210
 2018-05-08 05:53:05.144 UTC [main] main -> INFO 007 Exiting.....
 ```
 
-#### 8、代码查看和简单解读
+#### 10、代码查看和简单解读
 打开github上面的代码
 
 ```
@@ -389,5 +400,8 @@ func (t *SimpleChaincode) invoke(stub shim.ChaincodeStubInterface, args []string
 	return shim.Success(nil)
 }
 ```
+
+
+
 
 
