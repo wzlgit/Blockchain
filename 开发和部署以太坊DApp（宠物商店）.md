@@ -5,7 +5,9 @@
     CryptoKitties（以太猫）是2017年11月上线的一款以太坊区块链虚拟养猫游戏，用户可以花费以太币买卖并繁殖不同品种的虚拟宠物猫，一只虚拟宠物猫在市场最高标价为340万美元。上线不到10天一跃成为以太坊上交易量最高的DApp，12月还出现了严重的拥堵事件，也因此暴露了区块链存在的问题。
 
     以太猫网址：https://www.cryptokitties.co/
-    ![1.以太猫](media/15268119349378/1.%E4%BB%A5%E5%A4%AA%E7%8C%AB.jpeg)
+![1.以太猫](media/15259234191457/1.%E4%BB%A5%E5%A4%AA%E7%8C%AB.jpeg)
+
+
 
 * 以太坊性能优化介绍
 为了改善以太坊的效率、吞吐率和并发性等问题，出现了三种以太坊性能优化的代表性技术，分别是雷电网络，分片技术和Casper共识机制。
@@ -27,29 +29,29 @@
     前提条件：需要具备基本的以太坊和智能合约相关基础知识，以及具备HTML和JavaScript的基本使用
     适用对象：DApp开发新手
     
-宠物商店pet-shop官网参考地址（英文）：
-[]()http://truffleframework.com/tutorials/pet-shop
-有些步骤可能跟官网不同，MetaMask相关的步骤省略了比较多，可以查看官网的操作。
+    宠物商店pet-shop官网参考地址（英文）：
+    http://truffleframework.com/tutorials/pet-shop
+    有些步骤可能跟官网不同，MetaMask相关的步骤省略了比较多，可以查看官网的操作。
 
 
 #### 2、搭建开发环境
 * 安装Node.js
 
-官网：https://nodejs.org/en/
-安装很简单，只需要下载安装包直接安装即可，可以先通过终端检查安装情况再安装，没有对应结果显示再安装:
+    官网：https://nodejs.org/en/
+    安装很简单，只需要下载安装包直接安装即可，可以先通过终端检查安装情况再安装，没有对应结果显示再安装:
     
-```
-wenzildeiMac:~ wenzil$ npm -v
-3.10.10
-wenzildeiMac:~ wenzil$ node -v
-v6.9.5
-```
+    ```
+    wenzildeiMac:~ wenzil$ npm -v
+    3.10.10
+    wenzildeiMac:~ wenzil$ node -v
+    v6.9.5
+    ```
 
 * 安装Truffle：
 
-```
-npm install -g truffle
-```
+    ```
+    npm install -g truffle
+    ```
 
 #### 3、通过Truffle Box创建项目
 
@@ -114,7 +116,7 @@ contract Adoption {
 
 配置以太坊客户端本地环境：
 打开truffle.js配置文件，修改端口为9545.
-![3.trufflejs配置文件端口](media/15268119349378/3.trufflejs%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AB%AF%E5%8F%A3.png)
+![2.trufflejs配置文件端口](media/15259234191457/2.trufflejs%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%AB%AF%E5%8F%A3.png)
 
 
 
@@ -199,8 +201,6 @@ Truffle集成了一个叫Truffle Develop的开发者控制台，可以用来部�
 };
   ```
   
-部署智能合约之前，确保有一个区块链在运行，可以使用
-Ganache来开启一个私有链来进行开发和部署智能合约。运行测试。
 
 #### 7、编译和部署智能合约
 
@@ -231,7 +231,7 @@ Saving artifacts...
 在test目录下新建一个TestAdoption.sol，编写测试合约
 
 ```
-pragma solidity ^ 0.4 .11;
+pragma solidity ^ 0.4.17;
 
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
@@ -303,7 +303,7 @@ Compilation warnings encountered:
 现在，我们已经创建了智能合约，将其部署到我们的本地测试区块链中，并确认我们可以通过控制台与它进行交互，现在是时候创建一个UI，让Peter有一些东西可以用于他的宠物店！
 
 这个应用程序的前端代码在pet-shop项目目录里。存在于src/目录中。打开"src/js/app.js"修改initWeb3()
-修改app.js的initW3b3()，修改为
+修改app.js的initWeb3函数，修改为
 
 ```
 initWeb3: function() {
@@ -321,7 +321,7 @@ initWeb3: function() {
   },
 ```
 
-修改initContract()代码，如下
+修改initContract函数，如下
 
 ```
   initContract: function() {
@@ -343,7 +343,7 @@ initWeb3: function() {
   },
 ```
 
-修改markAdopted()代码：
+修改markAdopted函数，如下：
 
 ```
 markAdopted: function(adopters, account) {
@@ -366,7 +366,7 @@ markAdopted: function(adopters, account) {
   }
 ```
 
-修改handleAdopt()代码：
+修改handleAdopt函数：
 
 ```
 handleAdopt: function(event) {
@@ -447,28 +447,30 @@ wenzildeiMac:pet-shop-tutorial wenzil$ npm run dev
 Private Keys:
 (0) c87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3
 ```
-然后选择"Import Account"导入私钥，获取对应的帐号，发现为100个以太币。
-![2.MetaMask导入私钥](media/15268119349378/2.MetaMask%E5%AF%BC%E5%85%A5%E7%A7%81%E9%92%A5.png)
+然后选择"Import Account"导入私钥，获取对应的帐号，发现为100个以太币，本地用户名可以随意修改。
+![3.MetaMask导入私钥](media/15259234191457/3.MetaMask%E5%AF%BC%E5%85%A5%E7%A7%81%E9%92%A5.png)
 
 
 
 
-#### 12、启动服务，前端测试领养宠物：
+#### 12、启动服务，前端测试领养宠物
 修改"src/index.html"里面jQuery的地址，因为谷歌被墙，jQuery不可用，可以换为本地的或者其他网站的jQuery地址。
 如图：
-![4.修改jQuery引用文件地址](media/15268119349378/4.%E4%BF%AE%E6%94%B9jQuery%E5%BC%95%E7%94%A8%E6%96%87%E4%BB%B6%E5%9C%B0%E5%9D%80.png)
+![4.修改jQuery引用文件地址](media/15259234191457/4.%E4%BF%AE%E6%94%B9jQuery%E5%BC%95%E7%94%A8%E6%96%87%E4%BB%B6%E5%9C%B0%E5%9D%80.png)
+
 
 
 然后打开"http://localhost:3000/"
-然后刷新页面，发现原来的空白页面多了很多宠物狗，如图:
-![5.宠物商店前端页面](media/15268119349378/5.%E5%AE%A0%E7%89%A9%E5%95%86%E5%BA%97%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2.png)
+刷新页面，发现原来的空白页面多了很多宠物狗，如图:
+![5.宠物商店前端页面](media/15259234191457/5.%E5%AE%A0%E7%89%A9%E5%95%86%E5%BA%97%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2.png)
 
 
-然后，点击某个宠物的"Adopt"按钮，会弹出交易确认弹框，点击"SUBMIT"即可。
-![6.测试领养宠物](media/15268119349378/6.%E6%B5%8B%E8%AF%95%E9%A2%86%E5%85%BB%E5%AE%A0%E7%89%A9.png)
+点击某个宠物的"Adopt"按钮，会弹出交易确认弹框，点击"SUBMIT"即可。
+![6.测试领养宠物](media/15259234191457/6.%E6%B5%8B%E8%AF%95%E9%A2%86%E5%85%BB%E5%AE%A0%E7%89%A9.png)
+
 
 提交之后如果成功扣除了以太币，页面没有自动刷新的话，手动刷新下，发现"Adopt"按钮变成了"Success"。
-![7.测试领养成功](media/15268119349378/7.%E6%B5%8B%E8%AF%95%E9%A2%86%E5%85%BB%E6%88%90%E5%8A%9F.png)
+![7.测试领养成功](media/15259234191457/7.%E6%B5%8B%E8%AF%95%E9%A2%86%E5%85%BB%E6%88%90%E5%8A%9F.png)
 
 
 
