@@ -41,6 +41,7 @@
         盗梦空间：QmQATmpxXvSiQgt9c9idz9k3S3gQnh7wYj4DbdMQ9VGyLh
 
 #### 2、IPFS的安装
+
 既然IPFS这么牛，有必要了解一下IPFS的开发，先从环境搭建开始。
 
 * IPFS Desktop
@@ -52,6 +53,7 @@
     https://github.com/ipfs-shipyard/ipfs-desktop
 
 * Go-IPFS
+
     进入ipfs的官网，找到并切换到"Install"页面，点击"Download IPFS for your platform"，会跳转到如下网址（可能需要翻墙）：
     https://dist.ipfs.io/#go-ipfs
 
@@ -113,6 +115,7 @@ GitHub地址：https://github.com/ipfs/go-ipfs
     ```
 
 * 修改IPFS默认存储空间
+
 存储节点默认存储大小为10G，如果你想修改存储空间，可以修改config配置文件，找到StorageMax并修改
 
     ```
@@ -124,6 +127,7 @@ wenzildeiMac:~ wenzil$ ipfs config edit
        
     
 * 启动和同步节点服务器
+
 执行"ipfs daemon"命令，可以同步节点数据到IPFS网络。
 
     ```
@@ -148,6 +152,7 @@ wenzildeiMac:~ wenzil$ ipfs config edit
 #### 4、IPFS运行体验
     
 * IPFS查看ReadMe
+
 可以回去查看执行"ipfs init"命令的时候，返回的内容。打开一个新的终端，操作如下：
 
     ```
@@ -180,6 +185,7 @@ wenzildeiMac:~ wenzil$ ipfs config edit
       ./security-notes
     ```
 * Web管理界面：
+
 IPFS节点服务器启动后，可以用浏览器访问：http://localhost:5001/webui
 有本地配置、节点连接、本地节点文件等信息，如图：
 ![7.打开webui](media/15269926603540/7.%E6%89%93%E5%BC%80webui.png)
@@ -237,7 +243,9 @@ http://localhost:8080/ipfs/QmSVKEwPBTzw5QLzGUE8oN8J1r4cadMeieSw4Co1ozm2Ab
     Saving file(s) to QmSVKEwPBTzw5QLzGUE8oN8J1r4cadMeieSw4Co1ozm2Ab
      25 B / 25 B [========================================================] 100.00% 0s
     ```
+    
     查看当前目录，发现多了一个"QmSV..."的文件"
+    
     ![10.下载IPFS节点的文件](media/15269926603540/10.%E4%B8%8B%E8%BD%BDIPFS%E8%8A%82%E7%82%B9%E7%9A%84%E6%96%87%E4%BB%B6.png)
 
     
