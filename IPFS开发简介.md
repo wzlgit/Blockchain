@@ -63,15 +63,15 @@ GitHub地址：https://github.com/ipfs/go-ipfs
     将网页下载好的文件解压出来，下载的是"go-ipfs_v0.4.13_darwin-amd64.tar.gz"，解压出来的是go-ipfs文件夹，
     然后打开终端，进入到go-ipfs文件夹根目录，复制ipfs文件到系统的bin目录，然后可以通过"ipfs version"来检查，操作如下：
     
-```
-wenzildeiMac:go-ipfs wenzil$ pwd
-/Users/wenzil/Desktop/study/go-ipfs
-wenzildeiMac:go-ipfs wenzil$ ls
-LICENSE		README.md	build-log	install.sh	ipfs
-wenzildeiMac:go-ipfs wenzil$ cp ipfs /usr/local/bin/ipfs
-    wenzildeiMac:go-ipfs wenzil$ ipfs version
-    ipfs version 0.4.13
-```
+    ```
+    wenzildeiMac:go-ipfs wenzil$ pwd
+    /Users/wenzil/Desktop/study/go-ipfs
+    wenzildeiMac:go-ipfs wenzil$ ls
+    LICENSE		README.md	build-log	install.sh	ipfs
+    wenzildeiMac:go-ipfs wenzil$ cp ipfs /usr/local/bin/ipfs
+        wenzildeiMac:go-ipfs wenzil$ ipfs version
+        ipfs version 0.4.13
+    ```
 
 
 #### 3、IPFS节点的创建、查看和启动
@@ -117,7 +117,7 @@ wenzildeiMac:go-ipfs wenzil$ cp ipfs /usr/local/bin/ipfs
 
     ```
   wenzildeiMac:~ wenzil$ export EDITOR=/usr/bin/vim
-wenziliangdeMac-mini:~ wenzil$ ipfs config edit  
+wenzildeiMac:~ wenzil$ ipfs config edit  
     ```   
     ![8.修改IPFS默认存储空间](media/15269926603540/8.%E4%BF%AE%E6%94%B9IPFS%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4.png)
 
@@ -200,15 +200,15 @@ ipfs config --json API.HTTPHeaders.Access-Control-Expose-Headers '["Location"]'
 * 新建文件
 
     ```
-    wenziliangdeMac-mini:ifps_test wenzil$ vi test.txt
-    wenziliangdeMac-mini:ifps_test wenzil$ cat test.txt 
+    wenzildeiMac:ifps_test wenzil$ vi test.txt
+    wenzildeiMac:ifps_test wenzil$ cat test.txt 
     IPFS测试文件
     ```
 
 * 添加文件到IPFS节点
 
     ```
-    wenziliangdeMac-mini:ifps_test wenzil$ ipfs add test.txt 
+    wenzildeiMac:ifps_test wenzil$ ipfs add test.txt 
     added QmSVKEwPBTzw5QLzGUE8oN8J1r4cadMeieSw4Co1ozm2Ab test.txt
     ```
     添加文件到IPFS节点后，返回了文件的哈希值
@@ -216,7 +216,7 @@ ipfs config --json API.HTTPHeaders.Access-Control-Expose-Headers '["Location"]'
 * 查看IPFS节点的文件
 
     ```
-    wenziliangdeMac-mini:ifps_test wenzil$ ipfs cat QmSVKEwPBTzw5QLzGUE8oN8J1r4cadMeieSw4Co1ozm2Ab
+    wenzildeiMac:ifps_test wenzil$ ipfs cat QmSVKEwPBTzw5QLzGUE8oN8J1r4cadMeieSw4Co1ozm2Ab
     IPFS测试文件
     ```
     注意：此时的文件只是添加到了本地的IPFS节点，读取的是本地数据，可以通过如下网址查看。
