@@ -29,16 +29,16 @@
     * IPFS视频在线播放器
     ![2.IPFS视频在线播放器首页](media/15269926603540/2.IPFS%E8%A7%86%E9%A2%91%E5%9C%A8%E7%BA%BF%E6%92%AD%E6%94%BE%E5%99%A8%E9%A6%96%E9%A1%B5.png)
 
-    ![3.IPFS视频在线播放器播放电影](media/15269926603540/3.IPFS%E8%A7%86%E9%A2%91%E5%9C%A8%E7%BA%BF%E6%92%AD%E6%94%BE%E5%99%A8%E6%92%AD%E6%94%BE%E7%94%B5%E5%BD%B1.png)
+![3.IPFS视频在线播放器播放电影](media/15269926603540/3.IPFS%E8%A7%86%E9%A2%91%E5%9C%A8%E7%BA%BF%E6%92%AD%E6%94%BE%E5%99%A8%E6%92%AD%E6%94%BE%E7%94%B5%E5%BD%B1.png)
 
     
-   号称是国内第一个IPFS应用
-   IPFS视频在线播放器网址：http://www.ipfs.guide/
-    GitHub地址：https://github.com/download13/ipfstube
+        号称是国内第一个IPFS应用
+        IPFS视频在线播放器网址：http://www.ipfs.guide/
+        GitHub地址：https://github.com/download13/ipfstube
         
-    可用于测试的电影视频Hash（这里只列举两部部）：
-    神秘巨星：QmWBbKvLhVnkryKG6F5YdkcnoVahwD7Qi3CeJeZgM6Tq68
-    盗梦空间：QmQATmpxXvSiQgt9c9idz9k3S3gQnh7wYj4DbdMQ9VGyLh
+        可用于测试的电影视频Hash（这里只列举两部部）：
+        神秘巨星：QmWBbKvLhVnkryKG6F5YdkcnoVahwD7Qi3CeJeZgM6Tq68
+        盗梦空间：QmQATmpxXvSiQgt9c9idz9k3S3gQnh7wYj4DbdMQ9VGyLh
 
 #### 2、IPFS的安装
 既然IPFS这么牛，有必要了解一下IPFS的开发，先从环境搭建开始。
@@ -65,15 +65,14 @@ GitHub地址：https://github.com/ipfs/go-ipfs
     
     ```
     wenzildeiMac:go-ipfs wenzil$ pwd
-/Users/wenzil/Desktop/study/go-ipfs
-wenzildeiMac:go-ipfs wenzil$ ls
-LICENSE		README.md	build-log	install.sh	ipfs
-wenzildeiMac:go-ipfs wenzil$ cp ipfs /usr/local/bin/ipfs
-    wenzildeiMac:go-ipfs wenzil$ ipfs version
-    ipfs version 0.4.13
+    /Users/wenzil/Desktop/study/go-ipfs
+    wenzildeiMac:go-ipfs wenzil$ ls
+    LICENSE		README.md	build-log	install.sh	ipfs
+    wenzildeiMac:go-ipfs wenzil$ cp ipfs /usr/local/bin/ipfs
+        wenzildeiMac:go-ipfs wenzil$ ipfs version
+        ipfs version 0.4.13
     ```
-    
-    
+
 
 #### 3、IPFS节点的创建、查看和启动
 **以下是安装官网的Go-IPFS步骤下实验的**
@@ -120,7 +119,8 @@ wenzildeiMac:go-ipfs wenzil$ cp ipfs /usr/local/bin/ipfs
   wenzildeiMac:~ wenzil$ export EDITOR=/usr/bin/vim
 wenziliangdeMac-mini:~ wenzil$ ipfs config edit  
     ```   
-    
+    ![8.修改IPFS默认存储空间](media/15269926603540/8.%E4%BF%AE%E6%94%B9IPFS%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4.png)
+
        
     
 * 启动和同步节点服务器
@@ -143,6 +143,7 @@ wenziliangdeMac-mini:~ wenzil$ ipfs config edit
     Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
     Daemon is ready
     ```
+
 
 #### 4、IPFS运行体验
     
