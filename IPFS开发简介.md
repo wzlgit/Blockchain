@@ -63,15 +63,15 @@ GitHub地址：https://github.com/ipfs/go-ipfs
     将网页下载好的文件解压出来，下载的是"go-ipfs_v0.4.13_darwin-amd64.tar.gz"，解压出来的是go-ipfs文件夹，
     然后打开终端，进入到go-ipfs文件夹根目录，复制ipfs文件到系统的bin目录，然后可以通过"ipfs version"来检查，操作如下：
     
-    ```
-    wenzildeiMac:go-ipfs wenzil$ pwd
-    /Users/wenzil/Desktop/study/go-ipfs
-    wenzildeiMac:go-ipfs wenzil$ ls
-    LICENSE		README.md	build-log	install.sh	ipfs
-    wenzildeiMac:go-ipfs wenzil$ cp ipfs /usr/local/bin/ipfs
-        wenzildeiMac:go-ipfs wenzil$ ipfs version
-        ipfs version 0.4.13
-    ```
+```
+wenzildeiMac:go-ipfs wenzil$ pwd
+/Users/wenzil/Desktop/study/go-ipfs
+wenzildeiMac:go-ipfs wenzil$ ls
+LICENSE		README.md	build-log	install.sh	ipfs
+wenzildeiMac:go-ipfs wenzil$ cp ipfs /usr/local/bin/ipfs
+    wenzildeiMac:go-ipfs wenzil$ ipfs version
+    ipfs version 0.4.13
+```
 
 
 #### 3、IPFS节点的创建、查看和启动
@@ -238,6 +238,8 @@ http://localhost:8080/ipfs/QmSVKEwPBTzw5QLzGUE8oN8J1r4cadMeieSw4Co1ozm2Ab
      25 B / 25 B [========================================================] 100.00% 0s
     ```
     查看当前目录，发现多了一个"QmSV..."的文件"
+    ![10.下载IPFS节点的文件](media/15269926603540/10.%E4%B8%8B%E8%BD%BDIPFS%E8%8A%82%E7%82%B9%E7%9A%84%E6%96%87%E4%BB%B6.png)
+
     
 
 #### 7、IPFS与以太坊DApp的结合
