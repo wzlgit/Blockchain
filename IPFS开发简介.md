@@ -14,6 +14,7 @@
     注：Filecoin是IPFS激励层的加密数字货币（即代币），有点类似于以太坊平台上的以太币。
     
     IPFS官网：https://ipfs.io/
+    
     Filecoin官网：https://filecoin.io/
 
 * IPFS的应用案例
@@ -29,16 +30,14 @@
     * IPFS视频在线播放器
     ![2.IPFS视频在线播放器首页](media/15269926603540/2.IPFS%E8%A7%86%E9%A2%91%E5%9C%A8%E7%BA%BF%E6%92%AD%E6%94%BE%E5%99%A8%E9%A6%96%E9%A1%B5.png)
 
-![3.IPFS视频在线播放器播放电影](media/15269926603540/3.IPFS%E8%A7%86%E9%A2%91%E5%9C%A8%E7%BA%BF%E6%92%AD%E6%94%BE%E5%99%A8%E6%92%AD%E6%94%BE%E7%94%B5%E5%BD%B1.png)
+    ![3.IPFS视频在线播放器播放电影](media/15269926603540/3.IPFS%E8%A7%86%E9%A2%91%E5%9C%A8%E7%BA%BF%E6%92%AD%E6%94%BE%E5%99%A8%E6%92%AD%E6%94%BE%E7%94%B5%E5%BD%B1.png)
 
-    
-        号称是国内第一个IPFS应用
-        IPFS视频在线播放器网址：http://www.ipfs.guide/
-        GitHub地址：https://github.com/download13/ipfstube
-        
-        可用于测试的电影视频Hash（这里只列举两部部）：
-        神秘巨星：QmWBbKvLhVnkryKG6F5YdkcnoVahwD7Qi3CeJeZgM6Tq68
-        盗梦空间：QmQATmpxXvSiQgt9c9idz9k3S3gQnh7wYj4DbdMQ9VGyLh
+    号称是国内第一个IPFS应用
+    IPFS视频在线播放器网址：http://www.ipfs.guide/
+    GitHub地址：https://github.com/download13/ipfstube
+    可用于测试的电影视频Hash（这里只列举两部部）：
+    神秘巨星：QmWBbKvLhVnkryKG6F5YdkcnoVahwD7Qi3CeJeZgM6Tq68
+    盗梦空间：QmQATmpxXvSiQgt9c9idz9k3S3gQnh7wYj4DbdMQ9VGyLh
 
 #### 2、IPFS的安装
 
