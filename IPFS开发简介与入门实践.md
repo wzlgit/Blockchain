@@ -730,7 +730,7 @@ export default App
     
  > ##### 7.6 新建终端，执行"npm start"命令，结果如图:
  
-     ![21.npm_start](media/15270405607399/21.npm_start.png)
+![21.npm_start](media/15270405607399/21.npm_start.png)
 
 会自动打开网页，然后上传图片，点击"图片写入区块链"
 
