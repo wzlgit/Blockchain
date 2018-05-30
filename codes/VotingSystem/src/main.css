@@ -1,0 +1,29 @@
+.pageTitle {
+ margin: 10px;
+}
+
+.dataContent {
+ border: 1px solid #ccc;
+ display:flex;
+ width: 50%;
+ margin: 0 0 -1px 0;
+}
+
+.dataItem {
+ flex: 1;
+ align-items: center;
+ justify-content: center;
+ display: flex;
+ padding: 5px;
+}
+
+.inputName {
+  width: 180px;
+  height: 30px;
+  margin: 10px 10px 10px 0;
+}
+
+.voteButton {
+  height: 38px;
+  margin-left: 10px;
+}
