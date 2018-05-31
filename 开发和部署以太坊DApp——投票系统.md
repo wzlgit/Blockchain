@@ -51,16 +51,16 @@
 建一个项目的目录，然后进入到该目录，如下：
 
 ```
-carisokdeiMac:study carisok$ pwd
-/Users/carisok/Desktop/study
-carisokdeiMac:study carisok$ mkdir VotingSystem
-carisokdeiMac:study carisok$ cd VotingSystem/
+wenzildeiMac:study wenzil$ pwd
+/Users/wenzil/Desktop/study
+wenzildeiMac:study wenzil$ mkdir VotingSystem
+wenzildeiMac:study wenzil$ cd VotingSystem/
 ```
 
 然后通过Truffle创建项目，如下：
 
 ```
-carisokdeiMac:VotingSystem carisok$ truffle unbox react-box
+wenzildeiMac:VotingSystem wenzil$ truffle unbox react-box
 Downloading...
 Unpacking...
 Setting up...
@@ -77,12 +77,14 @@ Commands:
 ```
 
 创建项目过程可能会有点慢，因为会安装项目中"package.json"里面的第三方依赖包，打开"node_modules"目录查看占用了182.1MB。
-![1.node_modules文件大小](media/15276505313610/1.node_modules%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F.png)
+![1.node_modules文件大小](media/15276933834746/1.node_modules%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F.png)
+
 
 
 #### 4、查看项目结构
 
-![2.查看项目结构](media/15276505313610/2.%E6%9F%A5%E7%9C%8B%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.png)
+![2.查看项目结构](media/15276933834746/2.%E6%9F%A5%E7%9C%8B%E9%A1%B9%E7%9B%AE%E7%BB%93%E6%9E%84.png)
+
 
 简单说明：
 * contrcts/：存放智能合约Solidity代码的文件夹
@@ -207,7 +209,7 @@ module.exports = {
 输入"ganache-cli"命令启动：
 
 ```
-carisokdeiMac:~ carisok$ ganache-cli
+wenzildeiMac:~ wenzil$ ganache-cli
 Ganache CLI v6.1.0 (ganache-core: 2.1.0)
 
 Available Accounts
@@ -252,15 +254,15 @@ Listening on localhost:8545
 然后打开新的终端，确认在当前项目的根目录，输入"truffle compile"命令进行编译：
 
 ```
-carisokdeiMac:VotingSystem carisok$ pwd
-/Users/carisok/Desktop/study/VotingSystem
-carisokdeiMac:VotingSystem carisok$ ls
+wenzildeiMac:VotingSystem wenzil$ pwd
+/Users/wenzil/Desktop/study/VotingSystem
+wenzildeiMac:VotingSystem wenzil$ ls
 box-img-lg.png		node_modules		test
 box-img-sm.png		package.json		truffle-config.js
 config			public			truffle.js
 contracts		scripts
 migrations		src
-carisokdeiMac:VotingSystem carisok$ truffle compile
+wenzildeiMac:VotingSystem wenzil$ truffle compile
 Compiling ./contracts/Migrations.sol...
 Compiling ./contracts/SimpleStorage.sol...
 Compiling ./contracts/Voting.sol...
@@ -272,7 +274,7 @@ Writing artifacts to ./build/contracts
 最后，执行"truffle migrate"命令部署智能合约：
 
 ```
-carisokdeiMac:VotingSystem carisok$ truffle migrate
+wenzildeiMac:VotingSystem wenzil$ truffle migrate
 Using network 'development'.
 
 Running migration: 1_initial_migration.js
@@ -352,7 +354,8 @@ truffle(development)> contract.totalVotesFor('Wenzil').then( (result) => { conso
 
 复制Voting.sol到[Remix Solidity IDE](http://remix.ethereum.org/)部署合约，部署成功后复制合约地址
 
-![3.部署投票智能合约](media/15276505313610/3.%E9%83%A8%E7%BD%B2%E6%8A%95%E7%A5%A8%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.png)
+![3.部署投票智能合约](media/15276933834746/3.%E9%83%A8%E7%BD%B2%E6%8A%95%E7%A5%A8%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.png)
+
 
 部署成功后，可以进行测试。
 
@@ -559,22 +562,26 @@ export default App
 ```
 
 输入"npm run start"命令启动服务器，会自动打开网页。
-![4.启动服务器打开网页](media/15276505313610/4.%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%89%93%E5%BC%80%E7%BD%91%E9%A1%B5.png)
+![4.启动服务器打开网页](media/15276933834746/4.%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%89%93%E5%BC%80%E7%BD%91%E9%A1%B5.png)
 
-刚开始"Wenzil"的投票是1，因为在[Remix Solidity IDE](http://remix.ethereum.org/)部署合约的时候投了1票，然后手动投票了好几次，所以为6，没有重新实验了。
+
+刚开始"Wenzil"的投票是2，因为在[Remix Solidity IDE](http://remix.ethereum.org/)部署合约的时候投了2票，然后手动投票了好几次，所以为6，没有重新实验了。
 
 演示下为"Jack Chen"投票，会弹出MetaMask确认交易
+![5.投票演示](media/15276933834746/5.%E6%8A%95%E7%A5%A8%E6%BC%94%E7%A4%BA.png)
 
-![5.投票演示](media/15276505313610/5.%E6%8A%95%E7%A5%A8%E6%BC%94%E7%A4%BA.png)
 
 等几秒之后，页面自动更新票数。
-![6.投票成功](media/15276505313610/6.%E6%8A%95%E7%A5%A8%E6%88%90%E5%8A%9F.png)
+![6.投票成功](media/15276933834746/6.%E6%8A%95%E7%A5%A8%E6%88%90%E5%8A%9F.png)
+
 
 如果输入非候选人名字的话，MetaMask会显示错误信息。
-![7.投票失败png](media/15276505313610/7.%E6%8A%95%E7%A5%A8%E5%A4%B1%E8%B4%A5png.png)
+![7.投票失败](media/15276933834746/7.%E6%8A%95%E7%A5%A8%E5%A4%B1%E8%B4%A5.png)
+
 
 继续提交，打开Etherscan查看区块链信息，显示如图:
-![8.Etherscan查看区块链信息](media/15276505313610/8.Etherscan%E6%9F%A5%E7%9C%8B%E5%8C%BA%E5%9D%97%E9%93%BE%E4%BF%A1%E6%81%AF.png)
+![8.Etherscan查看区块链信息](media/15276933834746/8.Etherscan%E6%9F%A5%E7%9C%8B%E5%8C%BA%E5%9D%97%E9%93%BE%E4%BF%A1%E6%81%AF.png)
+
 
 搞定，收工。
 
