@@ -17,8 +17,7 @@ Origin Protocol是一个基于以太坊和IPFS（星际文件系统）建立的�
 Origin Demo DApp地址：
 https://demo.originprotocol.com/#/
 
-![1.Origin测试版网址首页](media/15281219311933/1.Origin%E6%B5%8B%E8%AF%95%E7%89%88%E7%BD%91%E5%9D%80%E9%A6%96%E9%A1%B5.png)
-
+![1.OriginDemoDApp网址首页](media/15281219311933/1.OriginDemoDApp%E7%BD%91%E5%9D%80%E9%A6%96%E9%A1%B5.png)
 
 官方Origin平台宣布了他们的计划：2018年Q2季度公开测试和社区销售，并在Q3季度进行代币发行和第三方DApp的推出。2019年，实现完全去中心化的服务和监管。
 
@@ -92,6 +91,6 @@ https://demo.originprotocol.com/#/listing/0x77d4BA8e09b67a6b2C50215f5D3bE8eeA0ce
 
 至于如何获取测试网络的以太币，可以查看如下的帖子内容。
 
-该文章部分内容来源于如下网址，我删除了广告部分并对内容和截图做了修改和调整，不好意思了。
+该文章部分内容来源于如下网址，我删除了广告部分并对内容和截图做了修改和调整，不好意思了，如有侵权联系我删除文章。
 https://juejin.im/post/5ab33444f265da239e4dfb27
 
