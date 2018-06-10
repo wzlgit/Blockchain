@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>文章发布</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <script type="text/javascript" src="./lib/nebulas.js"></script>
+  <script type="text/javascript" src="./lib/nebPay.min.js"></script>
+  <script type="text/javascript" src="./lib/jquery-3.3.1.min.js"></script>
+  <script src="http://cdn.bootcss.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col-md-12 column">
+
+        <h3>发布文章</h3>
+
+        <form>
+          <div class="form-group" style="margin-top:20px">
+            <label for="author">文章作者：</label>
+            <input id="input_author" type="text" class="form-control" id="author" placeholder="输入文章作者">
+
+            <label for="title" style="margin-top:10px">文章标题：</label>
+            <input id="input_title" type="text" class="form-control" id="title" placeholder="输入文章标题">
+            
+            <label for="content" style="margin-top:10px">文章内容：</label>
+            <input id="input_content" type="text" class="form-control" id="content" placeholder="输入文章内容">
+          </div>
+
+          <div style="text-align:center;margin-top:20px">
+            <button id="post" type="submit" class="btn btn-primary" style="padding:6px 16px">发布</button>
+          </div>
+        </form>
+
+        <h3 style="margin-bottom:10px">查询文章</h3>
+
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="请输入文章标题" id="text_search" />
+          <span class="input-group-btn">
+            <button id="button_search" class="btn btn-primary">搜索</button>
+          </span>
+        </div>
+
+      </div>
+      <div class="row clearfix">
+        <div class="col-md-12 column">
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:30px">
+        <h4 id="article_title"></h4>
+      </div>
+      <div style="text-align:center">
+        <span id="article_author"></span><span id="article_date" style="margin-left:20px"></span>
+      </div>
+      <div id="article_content" style="margin-top:10px"></div>
+    </div>
+  </body>
+
+  <script>
+  "use strict";
+
+  // 智能合约的地址
+  var contactAddress = "n1yE6rWrGo8yd1E9Wzn6CqZB85gyLF65YdL";
+  // 访问星云链的API
+  var nebulas = require("nebulas"), Account = Account, neb = new nebulas.Neb();
+  // 设置使用的网络，主网为"https://mainnet.nebulas.io"，测试网络为
+  neb.setRequest(new nebulas.HttpRequest("https://testnet.nebulas.io"));
+
+  // NebPay SDK 为不同平台的交易提供了统一的支付接口
+  // 开发者在Dapp页面中使用NebPay API可以通过浏览器插件钱包、手机App钱包等实现交易支付和合约调用。
+  var NebPay = require("nebpay");
+  var nebPay = new NebPay();
+
+  // 执行合约返回的交易流水号，用于查询交易信息
+  var serialNumber;
+  $("#button_search").click(function () {
+    if (!$("#text_search").val()) {
+      alert('搜索文章标题不能为空');
+      return;
+    }
+    $('#article_content').text("");
+    var from = contactAddress
+    var value = "0";  // 金额
+    var nonce = "0";  // 交易序号
+    var gas_price = "1000000";  // 手续费价格
+    var gas_limit = "2000000";  // 手续费限制
+    var callFunction = "get";
+    var callArgs = "[\"" + $("#text_search").val() + "\"]";
+    console.log(callArgs);
+    var contract = {  // 合约
+      "function": callFunction,  // 方法名
+      "args": callArgs    // 方法的参数
+    }
+
+    // 使用api.call执行合约中的方法
+    neb.api.call(from, contactAddress, value, nonce, gas_price, gas_limit, contract).then(function (resp) {
+      var result = resp.result;
+
+      if (result === 'null') {
+        $('#article_content').text("没有找到对应的文章");
+        // 清空信息
+        $('#article_title').text("");
+        $('#article_author').text("");
+        $('#article_date').text("");
+        return;
+      }
+      console.log(result);
+      result = JSON.parse(result);
+      $("#article_title").text(result.title);
+      $('#article_content').text(result.content);
+      $('#article_author').text("文章作者：" + result.author);
+      $('#article_date').text("发布时间：" + result.date);
+    }).catch(function (err) {
+      console.log("error :" + err.message);
+    })
+  })
+  $('#post').click(function () {
+    if (!$("#input_author").val() || !$("#input_title").val() || !$("#input_content").val()) {
+      alert('作者、标题、内容输入不能为空');
+      return;
+    }
+    var to = contactAddress;
+    var value = "0";
+    var callFunction = "save";
+    var callArgs = "[\"" + $("#input_author").val() + "\",\""  + $("#input_title").val() + "\",\"" + $("#input_content").val() + "\"]";
+    console.log(callArgs);
+    serialNumber = nebPay.call(to, value, callFunction, callArgs, {    //使用nebpay的call接口去调用合约,
+      listener: function (resp) {
+        console.log("nebPay response:" + resp)
+      }
+    });
+  })
+</script>
+
+</html>
