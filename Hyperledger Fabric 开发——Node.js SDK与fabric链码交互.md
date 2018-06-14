@@ -422,8 +422,6 @@ Response is  {"colour":"Red","make":"Chevy","model":"Volt","owner":"Dave"}
 
 #### 10、额外的资源
 
-Hyperledger结构节点SDK回购是深入文档和示例代码的极好资源。
-
 [Hyperledger Fabric Node SDK repo](https://github.com/hyperledger/fabric-sdk-node)是很好的资源，里面有更深入的文档和示例代码。 您还可以在[Hyperledger Rocket Chat](https://chat.hyperledger.org/home)上咨询Fabric社区和组件专家。
 
 
