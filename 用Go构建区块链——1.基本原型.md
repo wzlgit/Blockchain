@@ -141,7 +141,7 @@ Hash: 561237522bb7fcfbccbc6fe0e98bbbde7427ffe01c6fb223f7562288ca2295d1
 
 链接：
 1.获取源码：[https://github.com/Jeiwan/blockchain_go/tree/part_1](https://github.com/Jeiwan/blockchain_go/tree/part_1)
-2.区块哈希算法：[https：//en.bitcoin.it/wiki/Block_hashing_algorithm](https：//en.bitcoin.it/wiki/Block_hashing_algorithm)
+2.区块哈希算法：[https://en.bitcoin.it/wiki/Block_hashing_algorithm](https://en.bitcoin.it/wiki/Block_hashing_algorithm)
 
 
 
