@@ -484,7 +484,7 @@ OP_ADD从堆栈中获取两个元素，求和，并将总和推入堆栈。OP_EQ
 
 1. [完整的源代码](完整的源代码)
 2. [UTXO集](https://en.bitcoin.it/wiki/Bitcoin_Core_0.11_(ch_2):_Data_Storage#The_UTXO_set_.28chainstate_leveldb.29)
-3. [Merkle树](Merkle Tree)
+3. [Merkle树](https://en.bitcoin.it/wiki/Protocol_documentation#Merkle_Trees)
 4. [脚本](https://en.bitcoin.it/wiki/Script)
 5. [“Ultraprune”比特币核心提交](https://github.com/sipa/bitcoin/commit/450cbb0944cd20a06ce806e6679a1f4c83c50db2)
 6. [UTXO集统计](https://statoshi.info/dashboard/db/unspent-transaction-output-set)
